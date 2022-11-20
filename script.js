@@ -30,11 +30,23 @@ function getComputerChoice() {
     let computerSelection = getComputerChoice();
 
  function playRound(playerSelection, computerSelection){
+
     if (playerSelection == computerSelection){
-    playerScore = playerScore + 1
-    computerScore = computerScore + 1
+            playerScore = playerScore + 1
+            computerScore = computerScore + 1
     return ("Win-Win" + playerSelection)
+    } else if (
+        (playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "scissors" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "rock") ){
+            playerScore = playerScore + 1
+            alert ("player win! " + playerSelection + " destroy " + computerSelection)
+        }
+    else {
+        computerScore = computerScore + 1
+        alert ("player loose! " + playerSelection + " is destroyed by: " + computerSelection)
     }
+
 
     }let a
 
