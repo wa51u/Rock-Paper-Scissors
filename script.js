@@ -4,10 +4,12 @@ let computerScore = 0
 
 let playerSelection; 
 let computerSelection; 
+let userChoice = "";
 
-game();
 
 
+
+/*
 function getUserChoice(){
     let userChoice ="";
     userChoice = prompt("Please choose your weapon: \n(rock scissors paper) ");
@@ -19,7 +21,7 @@ function getUserChoice(){
         return userChoice = ("STOP");
     };
 };
-
+*/
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3)+1;
@@ -52,15 +54,15 @@ function getComputerChoice() {
     };
 };
 
+
+
 function game(){
-    for (let i = 0; i < 5; i++) {
+
         playerSelection = getUserChoice();
-        if (playerSelection == "STOP"){
-            return;
-        };
+      
         computerSelection = getComputerChoice();
         playRound(playerSelection,computerSelection);
-        alert("Round "+ (i + 1)  +" Score:\nPlayer Score: " + playerScore + " Computer score: " + computerScore);
+       // alert("Round "+ (i + 1)  +" Score:\nPlayer Score: " + playerScore + " Computer score: " + computerScore);
     };
     if (playerScore > computerScore) {
         let warResult = "WIN";
@@ -69,5 +71,46 @@ function game(){
     } else {
         warResult = "LOOSE";
     }
-        alert("player: " + warResult + " with computer\nPlayer Score: " + playerScore + " - Computer score: " + computerScore);
+      //  alert("player: " + warResult + " with computer\nPlayer Score: " + playerScore + " - Computer score: " + computerScore);
+
+
+/*
+rockBtn = document.querySelector('#rock');
+scissorsBtn = document.querySelector('#scissors');
+papperBtn = document.querySelector('#paper');
+
+
+
+
+
+rockBtn.addEventListener('click', rock)
+scissorsBtn.addEventListener('click', scissors)
+papperBtn.addEventListener('click', paper)
+
+function rock(){
+    console.log('rock')
 };
+function scissors(){
+    console.log('scissors')
+};
+function paper(){
+    console.log('paper')
+};
+*/
+
+buttons = document.querySelectorAll('button')
+
+buttons.forEach(button => {
+button.addEventListener('click', () => {
+    UserChoice = (button.id)
+    console.log(button.id)
+    playRound(button.id, getComputerChoice())
+  });
+});
+
+
+
+function getUserChoice(){
+return userChoice
+}
+
