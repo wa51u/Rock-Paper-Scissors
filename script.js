@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
         result = ("player win battle!\n" + playerSelection + " destroy " + computerSelection);
     } else {
         computerScore = computerScore + 1;
-        result = ("player loose battle!\n" + playerSelection + " is destroyed by: " + computerSelection);
+        result = ("player loose battle!\n " + playerSelection + " is destroyed by: " + computerSelection);
     };
 };
 
