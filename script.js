@@ -43,7 +43,7 @@ function game(button) {
     userChoice = (button);
     playRound(button, getComputerChoice());
     roundNr++;
-    round = ("Round " + (roundNr) + " Score:\nPlayer Score: " + playerScore + " Computer score: " + computerScore);
+    round = ("Round  " + (roundNr) + " Score:\nPlayer Score: " + playerScore + " Computer score: " + computerScore);
     if (roundNr == 6){
         divBoard.style.visibility='hidden';
 
